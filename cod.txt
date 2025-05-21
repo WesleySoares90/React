@@ -1,0 +1,58 @@
+cd C:\DieguezM\spring
+mvn spring-boot:run
+
+
+no react 
+npm start
+
+
+Build do React:
+
+bash
+Copiar
+Editar
+cd frontend
+npm run build
+Isso vai gerar a pasta build/ com os arquivos prontos para produção.
+
+Copiar o build do React para o Spring Boot:
+Coloque o conteúdo da pasta build/ dentro do diretório src/main/resources/static do seu projeto Spring Boot:
+
+bash
+Copiar
+Editar
+cp -r frontend/build/* backend/src/main/resources/static/
+O Spring Boot servirá esses arquivos automaticamente como conteúdo estático. Você pode acessar o React no navegador com:
+
+arduino
+Copiar
+Editar
+http://localhost:8080
+Build e execução do Spring Boot:
+
+bash
+Copiar
+Editar
+cd backend
+mvn clean package
+java -jar target/seu-backend.jar
+Isso inicia o Spring Boot, e ele já servirá o React.
+
+✅ Opção 2: Rodar separadamente (React com npm start e Spring com java -jar)
+Suba o React:
+
+bash
+Copiar
+Editar
+cd frontend
+npm start
+Isso roda o React no localhost:3000.
+
+Suba o Spring:
+
+bash
+Copiar
+Editar
+cd backend
+mvn clean package
+java -jar target/seu-backend.jar
